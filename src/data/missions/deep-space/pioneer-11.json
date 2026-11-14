@@ -1,0 +1,41 @@
+{
+  "id": "pioneer-11",
+  "world": "deep-space",
+  "name": "PIONEER 11",
+  "spacecraft": "Pioneer 11",
+  "category": "Interplanetary probe",
+  "destination": "Deep space / interplanetary journey",
+  "missionType": "Deep-space probe",
+  "environmentId": "pioneer-11",
+  "missionStatus": "Mission complete. Silent since 1995; leaving the solar system.",
+  "statusVerification": "needs_verification",
+  "launchDate": "April 1973",
+  "arrivalDate": "Jupiter flyby: December 1974 · Saturn flyby: September 1979",
+  "endDate": "Last contact: 1995",
+  "finalLocation": "Outbound trajectory beyond the planets",
+  "coordinates": null,
+  "visualAssets": {
+    "preview": null,
+    "images": [],
+    "videos": [],
+    "model": {
+      "type": "reconstruction",
+      "url": null,
+      "credit": null,
+      "note": "Simplified visual reconstruction built in-app. Not an official NASA model."
+    }
+  },
+  "briefNotes": [
+    {
+      "text": "Pioneer 11 flew past Jupiter and then became the first spacecraft to fly past Saturn. It is a separate mission from Pioneer 10 and carries its own Pioneer Plaque.",
+      "verification": "needs_verification",
+      "origin": "Team research brief (NASA-based); final check against NASA sources recommended"
+    }
+  ],
+  "chapters": [],
+  "timeline": [],
+  "scientificFacts": [],
+  "sources": [],
+  "assetCredits": [],
+  "dataVerificationStatus": "needs_verification"
+}

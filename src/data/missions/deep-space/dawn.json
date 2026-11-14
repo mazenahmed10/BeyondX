@@ -1,0 +1,41 @@
+{
+  "id": "dawn",
+  "world": "deep-space",
+  "name": "DAWN",
+  "spacecraft": "Dawn",
+  "category": "Orbiter",
+  "destination": "Ceres",
+  "missionType": "Orbiter",
+  "environmentId": "dawn-ceres",
+  "missionStatus": "Mission complete (2018). In orbit around Ceres.",
+  "statusVerification": "needs_verification",
+  "launchDate": "September 27, 2007",
+  "arrivalDate": "Vesta orbit: 2011 · Ceres orbit: 2015",
+  "endDate": "Mission end: November 1, 2018",
+  "finalLocation": "Orbit around dwarf planet Ceres",
+  "coordinates": null,
+  "visualAssets": {
+    "preview": null,
+    "images": [],
+    "videos": [],
+    "model": {
+      "type": "reconstruction",
+      "url": null,
+      "credit": null,
+      "note": "Simplified visual reconstruction built in-app. Not an official NASA model."
+    }
+  },
+  "briefNotes": [
+    {
+      "text": "Dawn did not land on Vesta or Ceres. It studied both from orbit, and remains in orbit around Ceres after running out of hydrazine.",
+      "verification": "needs_verification",
+      "origin": "Team research brief (NASA-based); final check against NASA sources recommended"
+    }
+  ],
+  "chapters": [],
+  "timeline": [],
+  "scientificFacts": [],
+  "sources": [],
+  "assetCredits": [],
+  "dataVerificationStatus": "needs_verification"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "near-shoemaker",
+  "world": "deep-space",
+  "name": "NEAR SHOEMAKER",
+  "spacecraft": "NEAR Shoemaker",
+  "category": "Asteroid mission",
+  "destination": "Asteroid 433 Eros",
+  "missionType": "Asteroid study",
+  "environmentId": "near-eros",
+  "missionStatus": "Mission complete (2001). Resting on asteroid 433 Eros.",
+  "statusVerification": "needs_verification",
+  "launchDate": "February 17, 1996",
+  "arrivalDate": "Entered orbit around Eros: February 2000",
+  "endDate": "Last contact: February 28, 2001",
+  "finalLocation": "Surface of asteroid 433 Eros (landed February 12, 2001)",
+  "coordinates": null,
+  "visualAssets": {
+    "preview": null,
+    "images": [],
+    "videos": [],
+    "model": {
+      "type": "reconstruction",
+      "url": null,
+      "credit": null,
+      "note": "Simplified visual reconstruction built in-app. Not an official NASA model."
+    }
+  },
+  "briefNotes": [
+    {
+      "text": "NEAR Shoemaker was the first spacecraft to orbit an asteroid. Its landing on Eros was not part of the original mission design; it survived and kept transmitting.",
+      "verification": "needs_verification",
+      "origin": "Team research brief (NASA-based); final check against NASA sources recommended"
+    }
+  ],
+  "chapters": [],
+  "timeline": [],
+  "scientificFacts": [],
+  "sources": [],
+  "assetCredits": [],
+  "dataVerificationStatus": "needs_verification"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "pioneer-10",
+  "world": "deep-space",
+  "name": "PIONEER 10",
+  "spacecraft": "Pioneer 10",
+  "category": "Interplanetary probe",
+  "destination": "Deep space / interplanetary journey",
+  "missionType": "Deep-space probe",
+  "environmentId": "pioneer-10",
+  "missionStatus": "Mission complete. Silent since 2003; leaving the solar system.",
+  "statusVerification": "needs_verification",
+  "launchDate": "March 2, 1972",
+  "arrivalDate": "Jupiter flyby: December 1973",
+  "endDate": "Last signal: January 2003",
+  "finalLocation": "Outbound trajectory beyond the planets",
+  "coordinates": null,
+  "visualAssets": {
+    "preview": null,
+    "images": [],
+    "videos": [],
+    "model": {
+      "type": "reconstruction",
+      "url": null,
+      "credit": null,
+      "note": "Simplified visual reconstruction built in-app. Not an official NASA model."
+    }
+  },
+  "briefNotes": [
+    {
+      "text": "Pioneer 10 was the first spacecraft to cross the asteroid belt and fly past Jupiter. It carries the Pioneer Plaque. It did not land anywhere and was not destroyed.",
+      "verification": "needs_verification",
+      "origin": "Team research brief (NASA-based); final check against NASA sources recommended"
+    }
+  ],
+  "chapters": [],
+  "timeline": [],
+  "scientificFacts": [],
+  "sources": [],
+  "assetCredits": [],
+  "dataVerificationStatus": "needs_verification"
+}

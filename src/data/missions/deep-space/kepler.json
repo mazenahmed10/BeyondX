@@ -1,0 +1,41 @@
+{
+  "id": "kepler",
+  "world": "deep-space",
+  "name": "KEPLER",
+  "spacecraft": "Kepler Space Telescope",
+  "category": "Space telescope",
+  "destination": "Earth-trailing heliocentric orbit",
+  "missionType": "Space telescope",
+  "environmentId": "kepler",
+  "missionStatus": "Retired (2018). In orbit around the Sun.",
+  "statusVerification": "needs_verification",
+  "launchDate": "March 6, 2009",
+  "arrivalDate": "Not applicable: observed from an Earth-trailing solar orbit",
+  "endDate": "Retired: October 30, 2018",
+  "finalLocation": "Earth-trailing orbit around the Sun",
+  "coordinates": null,
+  "visualAssets": {
+    "preview": null,
+    "images": [],
+    "videos": [],
+    "model": {
+      "type": "reconstruction",
+      "url": null,
+      "credit": null,
+      "note": "Simplified visual reconstruction built in-app. Not an official NASA model."
+    }
+  },
+  "briefNotes": [
+    {
+      "text": "Kepler is a space telescope, not surface equipment. It found planets with the transit method. A planet in the habitable zone is not proof of life.",
+      "verification": "needs_verification",
+      "origin": "Team research brief (NASA-based); final check against NASA sources recommended"
+    }
+  ],
+  "chapters": [],
+  "timeline": [],
+  "scientificFacts": [],
+  "sources": [],
+  "assetCredits": [],
+  "dataVerificationStatus": "needs_verification"
+}

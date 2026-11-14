@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --color-space: #02040a;
+  --color-navy: #07101f;
+  --color-cyan-soft: #7fd8e6;
+  --color-gold: #e8b45a;
+  --color-ember: #e07a3a;
+  --font-display: "Helvetica Neue", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: var(--color-space);
+  color: #e9eef5;
+  font-family: var(--font-display);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(10, 20, 38, 0.55), rgba(6, 12, 24, 0.4));
+  border: 1px solid rgba(160, 200, 230, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ---------- Kids mode ---------- */
+.kid canvas { filter: saturate(1.35) brightness(1.15) hue-rotate(-8deg); }
+.kid .glass {
+  background: linear-gradient(135deg, rgba(255, 122, 184, 0.4), rgba(110, 90, 255, 0.4));
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 1.25rem;
+}
+.kid h1, .kid h2, .kid h3 { font-family: "Trebuchet MS", "Chalkboard SE", "Comic Sans MS", sans-serif; letter-spacing: 0.08em !important; font-weight: 800; }
+.kid button { border-radius: 9999px; }
+.kid .kid-bubble button { border-radius: 9999px; }
+.kid-float { animation: kid-float 6s ease-in-out infinite; opacity: 0.85; }
+.astro-float { animation: kid-float 4s ease-in-out infinite; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35)); }
+.astro-wave { transform-box: fill-box; transform-origin: 20% 90%; animation: astro-wave 1.6s ease-in-out infinite; }
+.astro-mouth { animation: astro-talk 0.28s ease-in-out infinite alternate; }
+@keyframes kid-float { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-14px) rotate(3deg); } }
+@keyframes astro-wave { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(14deg); } }
+@keyframes astro-talk { from { transform: scaleY(0.4); } to { transform: scaleY(1.7); } }
+@media (prefers-reduced-motion: reduce) { .kid-float, .astro-float, .astro-wave, .astro-mouth { animation: none; } }
+
+/* ---------- Discover a Story (shared panel) ---------- */
+.story-panel { box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45); }
+/* darker than the default glass: the panel sits over sunlit terrain and must stay readable */
+.story-panel.glass { background: linear-gradient(180deg, rgba(6, 13, 26, 0.9), rgba(4, 8, 17, 0.86)); }
+.story-body { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.2) transparent; }
+.story-progress-seg i { display: none; }
+.story-option {
+  display: flex; align-items: center; gap: 0.75rem; width: 100%; text-align: left; cursor: pointer;
+  padding: 0.7rem 0.9rem; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 0.125rem;
+  background: rgba(255, 255, 255, 0.03); color: rgba(255, 255, 255, 0.9); font-size: 0.875rem;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s, opacity 0.2s;
+}
+.story-option:hover:not(:disabled) { border-color: var(--color-gold); background: rgba(232, 180, 90, 0.08); }
+.story-option:focus-visible { outline: 1px solid var(--color-cyan-soft); outline-offset: 2px; }
+.story-option:disabled { cursor: default; }
+.story-option-letter { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--color-gold); }
+.story-option.is-right { border-color: rgba(52, 211, 153, 0.8); background: rgba(52, 211, 153, 0.12); color: #a7f3d0; }
+.story-option.is-wrong { border-color: rgba(248, 113, 113, 0.7); background: rgba(248, 113, 113, 0.1); color: #fecaca; }
+.story-option.is-dim { opacity: 0.45; }
+.story-audio-volume { accent-color: var(--color-gold); }
+.surface-marker-label {
+  white-space: nowrap; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em;
+  color: var(--color-gold); text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 0 2px #000;
+}
+.surface-marker-label.is-done { color: var(--color-cyan-soft); letter-spacing: 0.16em; }
+
+/* ---------- Kids mode: the whole story experience turns playful ---------- */
+.kid .story-panel {
+  background: linear-gradient(160deg, rgba(88, 62, 214, 0.92), rgba(214, 73, 152, 0.9));
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  border-radius: 1.75rem;
+  box-shadow: 0 0 0 5px rgba(255, 210, 74, 0.35), 0 20px 50px rgba(30, 10, 80, 0.55);
+  font-family: "Trebuchet MS", "Chalkboard SE", "Comic Sans MS", sans-serif;
+}
+.kid .story-kicker { color: #ffe27a; letter-spacing: 0.14em; font-family: inherit; font-weight: 800; font-size: 0.7rem; }
+.kid .story-title { letter-spacing: 0.02em !important; font-weight: 800; color: #fff; text-shadow: 0 2px 0 rgba(60, 20, 120, 0.5); }
+.kid .story-text { font-size: 1.08rem; font-weight: 600; line-height: 1.55; color: #fff; }
+.kid .story-close { color: #fff; font-weight: 800; }
+.kid .story-footer { border-color: rgba(255, 255, 255, 0.35); }
+.kid .story-progress { gap: 0.15rem; margin-top: 0.6rem; }
+.kid .story-progress-seg { height: auto; background: none !important; text-align: center; }
+.kid .story-progress-seg i { display: block; font-style: normal; font-size: 1.05rem; line-height: 1; color: rgba(255, 255, 255, 0.55); transition: transform 0.3s, color 0.3s; }
+.kid .story-progress-seg.is-done i { color: #ffd24a; }
+.kid .story-progress-seg.is-now i { color: #ffd24a; transform: scale(1.5) rotate(12deg); animation: kid-pop 0.5s ease-out; }
+.kid .story-option {
+  border: 3px solid rgba(255, 255, 255, 0.9); border-radius: 1.25rem; background: #fff; color: #2b2168;
+  font-weight: 800; font-size: 1rem; padding: 0.8rem 1rem; box-shadow: 0 5px 0 rgba(40, 20, 110, 0.45);
+}
+.kid .story-option:hover:not(:disabled) { background: #fff6c9; border-color: #ffd24a; transform: translateY(-2px) rotate(-0.6deg); }
+.kid .story-option:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 2px 0 rgba(40, 20, 110, 0.45); }
+.kid .story-option-letter { display: inline-flex; align-items: center; justify-content: center; width: 1.8rem; height: 1.8rem; border-radius: 9999px; background: #7b5cff; color: #fff; letter-spacing: 0; font-family: inherit; font-size: 0.9rem; }
+.kid .story-option.is-right { background: #c9ffd9; border-color: #35d07f; color: #0c6b3c; animation: kid-pop 0.5s ease-out; }
+.kid .story-option.is-wrong { background: #ffe0e0; border-color: #ff8a8a; color: #9b2c2c; animation: kid-wobble 0.45s ease-in-out; }
+.kid .story-feedback { border-width: 3px; border-radius: 1.25rem; background: rgba(255, 255, 255, 0.95); color: #2b2168 !important; border-color: #ffd24a !important; font-weight: 700; }
+.kid .story-btn-primary {
+  border: 0; border-radius: 9999px; background: #ffd24a; color: #2b2168; font-weight: 900; font-size: 0.8rem;
+  letter-spacing: 0.08em; padding: 0.75rem 1.25rem; box-shadow: 0 5px 0 #c98f00; transition: transform 0.12s, box-shadow 0.12s;
+}
+.kid .story-btn-primary:hover { background: #ffe27a; transform: translateY(-2px) scale(1.03); }
+.kid .story-btn-primary:active { transform: translateY(3px); box-shadow: 0 2px 0 #c98f00; }
+.kid .story-btn-ghost { border: 2px solid rgba(255, 255, 255, 0.8); border-radius: 9999px; color: #fff; font-weight: 800; letter-spacing: 0.08em; }
+.kid .story-audio { border: 2px solid rgba(255, 255, 255, 0.6); border-radius: 1.25rem; background: rgba(40, 20, 110, 0.35); }
+.kid .story-audio-main { background: #ffd24a; color: #2b2168; border-color: #ffd24a; }
+.kid .story-audio-fill { background: #ffd24a; }
+.kid .story-audio-volume { accent-color: #ffd24a; }
+.kid .story-highlight { background: #ffd24a; color: #2b2168; border: 0; font-weight: 800; }
+.kid .story-fate-chip { border: 0; border-radius: 9999px; background: #7be0ff; color: #1b1b4b; font-weight: 800; padding: 0.2rem 0.7rem; }
+.kid .story-fact { border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 1rem; background: rgba(255, 255, 255, 0.12); }
+.kid .story-badge { background: #fff; color: #2b2168; box-shadow: 0 5px 0 rgba(40, 20, 110, 0.45); animation: kid-pop 0.6s ease-out; }
+.kid .story-dot { background: #ffd24a; }
+.kid .surface-marker-label { font-family: "Trebuchet MS", "Comic Sans MS", sans-serif; font-weight: 800; letter-spacing: 0.04em; font-size: 14px; color: #fff; background: #ff5c9d; padding: 3px 10px; border-radius: 9999px; text-shadow: none; box-shadow: 0 3px 0 rgba(120, 20, 80, 0.6); }
+.kid .surface-marker-label.is-done { background: #ffd24a; color: #2b2168; box-shadow: 0 3px 0 #c98f00; }
+.kid .discovery-count { font-family: "Trebuchet MS", "Comic Sans MS", sans-serif; font-weight: 800; font-size: 1rem; }
+.kid .mars-timeline li { border-color: #ffd24a; }
+.kid-bubble { animation: kid-pop 0.35s ease-out; position: relative; }
+.kid-bubble::before { content: ""; position: absolute; left: -9px; top: 28px; border: 10px solid transparent; border-right-color: #fff; border-left: 0; }
+.astro-cheer { animation: astro-jump 0.7s ease-in-out infinite; }
+.astro-listen { animation: astro-tilt 2.2s ease-in-out infinite; transform-origin: 50% 90%; }
+.astro-blink { animation: astro-blink 0.9s ease-in-out infinite; }
+.confetti-piece { position: absolute; top: 0; width: 9px; height: 13px; opacity: 0; animation: confetti-fall 1.5s cubic-bezier(0.2, 0.7, 0.4, 1) forwards; }
+@keyframes kid-pop { 0% { transform: scale(0.85); } 60% { transform: scale(1.06); } 100% { transform: scale(1); } }
+@keyframes kid-wobble { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px) rotate(-1deg); } 75% { transform: translateX(6px) rotate(1deg); } }
+@keyframes astro-jump { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-16px) rotate(3deg); } }
+@keyframes astro-tilt { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(-2deg); } }
+@keyframes astro-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@keyframes confetti-fall {
+  0% { opacity: 1; transform: translate(0, -10px) rotate(0); }
+  100% { opacity: 0; transform: translate(var(--dx), 340px) rotate(var(--rot)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .astro-cheer, .astro-listen, .astro-blink, .kid-bubble, .confetti-piece,
+  .kid .story-option.is-right, .kid .story-option.is-wrong, .kid .story-badge, .kid .story-progress-seg.is-now i { animation: none; }
+  .confetti-piece { display: none; }
+}
